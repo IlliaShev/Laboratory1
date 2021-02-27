@@ -170,4 +170,13 @@ public class DisciplineHandler {
         }
         return credits;
     }
+
+    @Override
+    public String toString() {
+        StringBuilder res = new StringBuilder();
+        for (int i = 0; i < currentDiscipline; i++) {
+            res.append(i + 1).append(": ").append(disciplines[i]).append("\n");
+        }
+        return res.toString();
+    }
 }
