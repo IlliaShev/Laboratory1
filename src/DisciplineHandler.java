@@ -1,3 +1,6 @@
+import utils.ConsoleRequest;
+import utils.DataInput;
+
 public class DisciplineHandler {
     /**
      * Array for storing disciplines
@@ -24,6 +27,15 @@ public class DisciplineHandler {
     }
 
     /**
+     * Get size of discipline array
+     *
+     * @return maximum size of discipline array
+     */
+    public int getMaxDisciplines() {
+        return maxDisciplines;
+    }
+
+    /**
      * Add discipline to the Array
      */
     public void addDiscipline() {
@@ -34,11 +46,23 @@ public class DisciplineHandler {
     }
 
     /**
+     * Add discipline to the Array
+     *
+     * @param discipline - discipline
+     */
+    public void addDiscipline(Discipline discipline) {
+        if (currentDiscipline < maxDisciplines)
+            disciplines[currentDiscipline++] = discipline;
+        else
+            System.out.println("Досягнута максимальна кількість дисциплін, які може вести викладач");
+    }
+
+    /**
      * Print all the disciplines to the console
      */
     public void showAllDisciplines() {
         for (int i = 0; i < currentDiscipline; i++) {
-            System.out.println(i);
+            System.out.println((i + 1) + ": " + disciplines[i]);
         }
     }
 
@@ -61,13 +85,13 @@ public class DisciplineHandler {
      * @param indexOfDiscipline - index of the discipline
      */
     public void editDiscipline(int indexOfDiscipline) {
-        if (askUserTF("Бажаєте змінити назву дисципліни?")) {
+        if (ConsoleRequest.askUserTF("Бажаєте змінити назву дисципліни?")) {
             disciplines[indexOfDiscipline].setName(getValidName());
         }
-        if (askUserTF("Бажаєте змінити кількість кредитів за курс?")) {
+        if (ConsoleRequest.askUserTF("Бажаєте змінити кількість кредитів за курс?")) {
             disciplines[indexOfDiscipline].setCredits(getValidCredits());
         }
-        if (askUserTF("Бажаєте змінити кількість годин за курс?")) {
+        if (ConsoleRequest.askUserTF("Бажаєте змінити кількість годин за курс?")) {
             disciplines[indexOfDiscipline].setHours(getValidHours());
         }
         System.out.println("Відредагований курс:");
@@ -93,23 +117,6 @@ public class DisciplineHandler {
         System.out.println(disciplines[indexOfDiscipline]);
     }
 
-
-    /**
-     * Ask user question with yes/no answer
-     *
-     * @return true - uf user answer is "yes", otherwise false
-     */
-    private boolean askUserTF(String question) {
-        String choice;
-        while (true) {
-            choice = DataInput.getString(question + "[Y/N]");
-            if (choice.equals("Y"))
-                return true;
-            if (choice.equals("N"))
-                return false;
-            System.out.println("Неправильне введення даних");
-        }
-    }
 
     /**
      * Create new discipline

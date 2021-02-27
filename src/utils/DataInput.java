@@ -1,3 +1,5 @@
+package utils;
+
 import com.sun.jdi.IntegerValue;
 
 import java.io.*;
@@ -21,8 +23,7 @@ public final class DataInput {
             System.out.println("Invalid input. Please try again");
             s = getString(text);
         }
-        Integer value = Integer.valueOf(s);
-        return value;
+        return Integer.valueOf(s);
 
     }
 
@@ -32,8 +33,7 @@ public final class DataInput {
             System.out.println("Invalid input. Please try again");
             s = getString(text);
         }
-        Double value = Double.valueOf(s);
-        return value;
+        return Double.valueOf(s);
     }
 
     private static boolean validDouble(String s) {
