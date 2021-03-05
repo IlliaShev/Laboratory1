@@ -64,6 +64,14 @@ public class Chair {
         lectures.showLecturers();
     }
 
+    public String getStudentsByCourse(int course) {
+        StringBuilder res = new StringBuilder();
+        for (Student student : students.getStudentsByCourse(course)) {
+            res.append(student).append("\n");
+        }
+        return res.toString();
+    }
+
     @Override
     public String toString() {
         String res = "";

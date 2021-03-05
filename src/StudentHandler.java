@@ -1,6 +1,8 @@
 import utils.ConsoleRequest;
 import utils.DataInput;
 
+import java.lang.reflect.Array;
+
 public class StudentHandler {
     private Student[] students;
     private int maximumSize;
@@ -63,6 +65,21 @@ public class StudentHandler {
 
     private String getValidGroup() {
         return DataInput.getString("Введіть групу студента");
+    }
+
+    public Student[] getStudentsByCourse(int course) {
+        int arrSize = 0;
+        for (int i = 0; i < currentStudent; i++) {
+            if (students[i].getCourse() == course)
+                arrSize++;
+        }
+        Student[] res = new Student[arrSize];
+        int currIn = 0;
+        for (int i = 0; i < currentStudent; i++) {
+            if (students[i].getCourse() == course)
+                res[currIn++] = students[i];
+        }
+        return res;
     }
 
     private int getValidCourse() {
