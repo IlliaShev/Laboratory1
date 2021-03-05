@@ -44,6 +44,12 @@ public class StudentHandler {
         currentStudent--;
     }
 
+    public void showStudents() {
+        for (int i = 0; i < currentStudent; i++) {
+            System.out.println((i + 1) + ": " + students[i]);
+        }
+    }
+
     private Student buildStudent() {
         String name = getValidName();
         String group = getValidGroup();
