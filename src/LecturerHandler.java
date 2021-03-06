@@ -68,7 +68,7 @@ public class LecturerHandler {
     }
 
     /**
-     * Delete lectuerer from the handler
+     * Delete lecturer from the handler
      *
      * @param lecturerIndex - lecturer index
      */
@@ -169,6 +169,10 @@ public class LecturerHandler {
         return DataInput.getString("Введіть ім'я викладача");
     }
 
+    /**
+     *
+     * @return information about new lecture
+     */
     @Override
     public String toString() {
         StringBuilder res = new StringBuilder();
