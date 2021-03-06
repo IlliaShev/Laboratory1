@@ -39,11 +39,30 @@ public class ChairHandler {
 
 
     public void editChair(int indexChair) {
-
+        int choice = 0;
+        while (choice != 4) {
+            System.out.println("1 - Змінити назву кафедри");
+            System.out.println("2 - Змінити максимальну кількість студентів");
+            System.out.println("3 - Змінити максимальну кількість лекторів");
+            System.out.println("4 - Закінчити редагування кафедри");
+            choice = DataInput.getInt("Оберіть дію");
+            switch (choice) {
+                case 1 -> chairs[indexChair].setChairName(getValidNameChair());
+                case 2 -> chairs[indexChair].setMaximumStudentSize(getValidMaxStudents());
+                case 3 -> chairs[indexChair].setMaximumLecturerSize(getValidLecturers());
+                case 4 -> {
+                }
+                default -> System.out.println("Неправильне введення даних");
+            }
+        }
     }
 
     public void deleteChair(int indexChair) {
-
+        Chair[] newChairs = new Chair[maximumSize];
+        System.arraycopy(chairs, 0, newChairs, 0, indexChair);
+        System.arraycopy(chairs, indexChair + 1, newChairs, indexChair, maximumSize - indexChair - 1);
+        chairs = newChairs;
+        currentChair--;
     }
 
     private Chair buildChair() {
