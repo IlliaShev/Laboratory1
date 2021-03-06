@@ -41,10 +41,35 @@ public class Chair {
 
     /**
      * Create chair
+     *
      * @param chairName
      */
     public Chair(String chairName) {
         this(chairName, 10, 10);
+    }
+
+    public String getChairName() {
+        return chairName;
+    }
+
+    public void setChairName(String chairName) {
+        this.chairName = chairName;
+    }
+
+    public int getMaximumStudentSize() {
+        return maximumStudentSize;
+    }
+
+    public void setMaximumStudentSize(int maximumStudentSize) {
+        this.maximumStudentSize = maximumStudentSize;
+    }
+
+    public int getMaximumLecturerSize() {
+        return maximumLecturerSize;
+    }
+
+    public void setMaximumLecturerSize(int maximumLecturerSize) {
+        this.maximumLecturerSize = maximumLecturerSize;
     }
 
     /**
