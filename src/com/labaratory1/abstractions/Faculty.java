@@ -1,6 +1,7 @@
 package com.labaratory1.abstractions;
 
 import com.labaratory1.handler.*;
+import utils.ConsoleRequest;
 
 public class Faculty {
 
@@ -37,23 +38,30 @@ public class Faculty {
         this.name = name;
     }
 
-
     /**
      * Edit students
      */
     public void editChair() {
+        chairs.showChairs();
+        chairs.deleteChair(ConsoleRequest.getValidIndex(1, chairs.getMaximumSize(), "Введіть індекс кафедри для редагування") - 1);
+
+
     }
 
     /**
      * Add students
      */
     public void addChair() {
+        chairs.addChair();
     }
 
     /**
      * Delete students
      */
     public void deleteChair() {
+        chairs.showChairs();
+        chairs.deleteChair(ConsoleRequest.getValidIndex(1, chairs.getMaximumSize(), "Введіть індекс кафедри для видалення") - 1);
+
     }
 
     /**
