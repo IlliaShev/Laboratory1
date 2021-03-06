@@ -67,7 +67,10 @@ public class LecturerHandler {
      * Add lecturer to the handler
      */
     public void addLecturer() {
-        lecturers[currentLecturer++] = buildLecturer();
+        if (currentLecturer < maximumSize)
+            lecturers[currentLecturer++] = buildLecturer();
+        else
+            System.out.println("Досягнута максимальна кількість лекторів");
     }
 
     /**

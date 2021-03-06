@@ -57,7 +57,10 @@ public class StudentHandler {
      * Add student to the handler
      */
     public void addStudent() {
-        students[currentStudent++] = buildStudent();
+        if (currentStudent < maximumSize)
+            students[currentStudent++] = buildStudent();
+        else
+            System.out.println("Досягнута максимальна кількість студентів");
     }
 
     /**
