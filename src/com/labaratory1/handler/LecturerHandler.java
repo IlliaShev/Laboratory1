@@ -46,6 +46,13 @@ public class LecturerHandler {
     }
 
     /**
+     * Get number of current lecture
+     *
+     * @return current lecture
+     */
+    public int getCurrentLecture() { return currentLecturer; }
+
+    /**
      * Print to the console all the lecturers that was added
      */
     public void showLecturers() {

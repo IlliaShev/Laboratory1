@@ -15,13 +15,9 @@ public class ChairHandler {
         currentChair = 0;
     }
 
-    public int getMaximumSize() {
-        return maximumSize;
-    }
+    public int getMaximumSize() { return maximumSize; }
 
-    public int getCurrentChair() {
-        return currentChair;
-    }
+    public int getCurrentChair() { return currentChair; }
 
     public ChairHandler() {
         this(10);

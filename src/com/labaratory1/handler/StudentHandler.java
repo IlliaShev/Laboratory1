@@ -19,6 +19,24 @@ public class StudentHandler {
     private int currentStudent;
 
     /**
+     * Get number of current student
+     *
+     * @return current student
+     */
+    public int getCurrentStudent() {
+        return currentStudent;
+    }
+
+    /**
+     * Get maximum size of the faculties array
+     *
+     * @return maximum size
+     */
+    public int getMaximumSize() {
+        return maximumSize;
+    }
+
+    /**
      * Create handler for students
      *
      * @param maximumSize - maximum size of the array
@@ -35,14 +53,6 @@ public class StudentHandler {
         this(10);
     }
 
-    /**
-     * Get maximum size of the faculties array
-     *
-     * @return maximum size
-     */
-    public int getMaximumSize() {
-        return maximumSize;
-    }
 
     /**
      * Add student to the handler

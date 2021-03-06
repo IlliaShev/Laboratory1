@@ -43,6 +43,13 @@ public class FacultiesHandler {
     }
 
     /**
+     * Get number of current faculty
+     *
+     * @return current faculty
+     */
+    public int getCurrentFaculty() { return currentFaculty; }
+
+    /**
      * Print to the console all the faculty that was added
      */
     public void showFaculty() {

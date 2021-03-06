@@ -39,6 +39,13 @@ public class DisciplineHandler {
     }
 
     /**
+     * Get number of current discipline
+     *
+     * @return current discipline
+     */
+    public int getCurrentDiscipline() { return currentDiscipline; }
+
+    /**
      * Add discipline to the Array
      */
     public void addDiscipline() {
