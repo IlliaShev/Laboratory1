@@ -9,6 +9,7 @@ public class Faculty {
      */
     private String name;
 
+
     /**
      * Create faculty
      * @param name - faculty name

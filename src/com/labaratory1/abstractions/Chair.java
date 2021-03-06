@@ -1,5 +1,6 @@
 package com.labaratory1.abstractions;
 
+import utils.ConsoleRequest;
 import utils.DataInput;
 import com.labaratory1.handler.*;
 
@@ -58,7 +59,7 @@ public class Chair {
      */
     public void editStudent() {
         students.showStudents();
-        students.editStudent(getValidIndex(1, maximumStudentSize, "Введіть індекс студента для редагування") - 1);
+        students.editStudent(ConsoleRequest.getValidIndex(1, maximumStudentSize, "Введіть індекс студента для редагування") - 1);
     }
 
     /**
@@ -66,7 +67,7 @@ public class Chair {
      */
     public void deleteStudent() {
         students.showStudents();
-        students.deleteStudent(getValidIndex(1, maximumStudentSize, "Введіть індекс студента для видалення") - 1);
+        students.deleteStudent(ConsoleRequest.getValidIndex(1, maximumStudentSize, "Введіть індекс студента для видалення") - 1);
     }
 
     /**
@@ -81,7 +82,7 @@ public class Chair {
      */
     public void editLecturer() {
         lectures.showLecturers();
-        lectures.editLecturer(getValidIndex(1, maximumLecturerSize, "Введіть індекс вчителя для редагування") - 1);
+        lectures.editLecturer(ConsoleRequest.getValidIndex(1, maximumLecturerSize, "Введіть індекс вчителя для редагування") - 1);
     }
 
     /**
@@ -89,7 +90,7 @@ public class Chair {
      */
     public void deleteLecturer() {
         lectures.showLecturers();
-        lectures.deleteLecturer(getValidIndex(1, maximumLecturerSize, "Введіть індекс вчителя для видалення") - 1);
+        lectures.deleteLecturer(ConsoleRequest.getValidIndex(1, maximumLecturerSize, "Введіть індекс вчителя для видалення") - 1);
     }
 
     /**
@@ -99,14 +100,6 @@ public class Chair {
      * @param text
      * @return
      */
-    private int getValidIndex(int leftBorder, int rightBorder, String text) {
-        int index = DataInput.getInt(text);
-        while (index < leftBorder || index > rightBorder) {
-            System.out.println("Неправильне введення даних");
-            index = DataInput.getInt(text);
-        }
-        return index;
-    }
 
 
     /**

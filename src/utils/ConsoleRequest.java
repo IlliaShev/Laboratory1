@@ -17,4 +17,13 @@ public class ConsoleRequest {
             System.out.println("Неправильне введення даних");
         }
     }
+
+    public static int getValidIndex(int leftBorder, int rightBorder, String text) {
+        int index = DataInput.getInt(text);
+        while (index < leftBorder || index > rightBorder) {
+            System.out.println("Неправильне введення даних");
+            index = DataInput.getInt(text);
+        }
+        return index;
+    }
 }
