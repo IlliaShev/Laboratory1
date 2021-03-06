@@ -142,15 +142,12 @@ public class Chair {
 
     /**
      * Get students by course
+     *
      * @param course - course
      * @return students by course
      */
-    public String getStudentsByCourse(int course) {
-        StringBuilder res = new StringBuilder();
-        for (Student student : students.getStudentsByCourse(course)) {
-            res.append(student).append("\n");
-        }
-        return res.toString();
+    public Student[] getStudentsByCourse(int course) {
+        return students.getStudentsByCourse(course);
     }
 
     /**
