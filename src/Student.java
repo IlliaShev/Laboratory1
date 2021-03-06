@@ -26,6 +26,8 @@ public class Student {
     }
 
     /**
+     * Return student name
+     *
      * @return student name
      */
     public String getName() {
@@ -65,7 +67,7 @@ public class Student {
     }
 
     /**
-     * CHange student course
+     * Change student course
      *
      * @param course - new student course
      */
