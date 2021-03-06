@@ -18,6 +18,7 @@ public class Faculty {
      */
     public Faculty(String name){
         this.name = name;
+        chairs = new ChairHandler();
     }
 
     /**
@@ -27,6 +28,10 @@ public class Faculty {
      */
     public String getName() {
         return name;
+    }
+
+    public Chair getChair(int indexChair) {
+        return chairs.getChair(indexChair);
     }
 
     /**
@@ -43,9 +48,13 @@ public class Faculty {
      */
     public void editChair() {
         chairs.showChairs();
-        chairs.deleteChair(ConsoleRequest.getValidIndex(1, chairs.getCurrentChair()-1, "Введіть індекс кафедри для редагування") - 1);
+        chairs.editChair(ConsoleRequest.getValidIndex(1, chairs.getCurrentChair(), "Введіть індекс кафедри для редагування") - 1);
 
 
+    }
+
+    public int getNumberOfChairs() {
+        return chairs.getCurrentChair();
     }
 
     /**
@@ -60,8 +69,12 @@ public class Faculty {
      */
     public void deleteChair() {
         chairs.showChairs();
-        chairs.deleteChair(ConsoleRequest.getValidIndex(1, chairs.getCurrentChair()-1, "Введіть індекс кафедри для видалення") - 1);
+        chairs.deleteChair(ConsoleRequest.getValidIndex(1, chairs.getCurrentChair(), "Введіть індекс кафедри для видалення") - 1);
 
+    }
+
+    public void showChairs() {
+        chairs.showChairs();
     }
 
     /**

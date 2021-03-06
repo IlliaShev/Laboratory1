@@ -15,12 +15,21 @@ public class ChairHandler {
         currentChair = 0;
     }
 
-    public int getMaximumSize() { return maximumSize; }
+    public int getMaximumSize() {
+        return maximumSize;
+    }
 
-    public int getCurrentChair() { return currentChair; }
+    public int getCurrentChair() {
+        return currentChair;
+    }
 
     public ChairHandler() {
         this(10);
+    }
+
+
+    public Chair getChair(int indexChair) {
+        return chairs[indexChair];
     }
 
     public void showChairs() {
@@ -39,6 +48,7 @@ public class ChairHandler {
 
 
     public void editChair(int indexChair) {
+        System.out.println(chairs[indexChair]);
         int choice = 0;
         while (choice != 4) {
             System.out.println("1 - Змінити назву кафедри");
