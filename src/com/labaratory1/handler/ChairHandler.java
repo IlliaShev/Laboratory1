@@ -19,6 +19,10 @@ public class ChairHandler {
         return maximumSize;
     }
 
+    public int getCurrentChair() {
+        return currentChair;
+    }
+
     public ChairHandler() {
         this(10);
     }
@@ -42,7 +46,7 @@ public class ChairHandler {
 
     }
 
-    public void deleteChair() {
+    public void deleteChair(int indexChair) {
 
     }
 
