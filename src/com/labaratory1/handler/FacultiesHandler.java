@@ -71,7 +71,10 @@ public class FacultiesHandler {
      * Add faculty to the handler
      */
     public void addFaculty() {
-        faculties[currentFaculty++] = buildFaculty();
+        if (currentFaculty < maximumSize)
+            faculties[currentFaculty++] = buildFaculty();
+        else
+            System.out.println("Досягнута максимальна кількість факультетів");
     }
 
     /**

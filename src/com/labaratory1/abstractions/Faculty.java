@@ -43,7 +43,7 @@ public class Faculty {
      */
     public void editChair() {
         chairs.showChairs();
-        chairs.deleteChair(ConsoleRequest.getValidIndex(1, chairs.getCurrentChair()-1, "Введіть індекс кафедри для редагування") - 1);
+        chairs.deleteChair(ConsoleRequest.getValidIndex(1, chairs.getCurrentChair(), "Введіть індекс кафедри для редагування") - 1);
 
 
     }
@@ -60,7 +60,7 @@ public class Faculty {
      */
     public void deleteChair() {
         chairs.showChairs();
-        chairs.deleteChair(ConsoleRequest.getValidIndex(1, chairs.getCurrentChair()-1, "Введіть індекс кафедри для видалення") - 1);
+        chairs.deleteChair(ConsoleRequest.getValidIndex(1, chairs.getCurrentChair(), "Введіть індекс кафедри для видалення") - 1);
 
     }
 

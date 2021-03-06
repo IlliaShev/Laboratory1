@@ -84,7 +84,7 @@ public class Chair {
      */
     public void editStudent() {
         students.showStudents();
-        students.editStudent(ConsoleRequest.getValidIndex(1, students.getCurrentStudent()-1, "Введіть індекс студента для редагування") - 1);
+        students.editStudent(ConsoleRequest.getValidIndex(1, students.getCurrentStudent(), "Введіть індекс студента для редагування") - 1);
     }
 
     /**
@@ -92,7 +92,7 @@ public class Chair {
      */
     public void deleteStudent() {
         students.showStudents();
-        students.deleteStudent(ConsoleRequest.getValidIndex(1, students.getCurrentStudent()-1, "Введіть індекс студента для видалення") - 1);
+        students.deleteStudent(ConsoleRequest.getValidIndex(1, students.getCurrentStudent(), "Введіть індекс студента для видалення") - 1);
     }
 
     /**
@@ -107,7 +107,7 @@ public class Chair {
      */
     public void editLecturer() {
         lectures.showLecturers();
-        lectures.editLecturer(ConsoleRequest.getValidIndex(1, maximumLecturerSize, "Введіть індекс вчителя для редагування") - 1);
+        lectures.editLecturer(ConsoleRequest.getValidIndex(1, lectures.getCurrentLecture(), "Введіть індекс вчителя для редагування") - 1);
     }
 
     /**
@@ -115,7 +115,7 @@ public class Chair {
      */
     public void deleteLecturer() {
         lectures.showLecturers();
-        lectures.deleteLecturer(ConsoleRequest.getValidIndex(1, maximumLecturerSize, "Введіть індекс вчителя для видалення") - 1);
+        lectures.deleteLecturer(ConsoleRequest.getValidIndex(1, lectures.getCurrentLecture(), "Введіть індекс вчителя для видалення") - 1);
     }
 
     /**

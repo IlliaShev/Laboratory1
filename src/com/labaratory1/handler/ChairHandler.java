@@ -39,6 +39,7 @@ public class ChairHandler {
 
 
     public void editChair(int indexChair) {
+        System.out.println(chairs[indexChair]);
         int choice = 0;
         while (choice != 4) {
             System.out.println("1 - Змінити назву кафедри");

@@ -79,12 +79,23 @@ public class StudentHandler {
      * @param studentIndex - student index
      */
     public void editStudent(int studentIndex) {
-        if (ConsoleRequest.askUserTF("Бажаєте змінити ім'я студента?"))
-            students[studentIndex].setName(getValidName());
-        if (ConsoleRequest.askUserTF("Бажаєете змінити групу студента?"))
-            students[studentIndex].setGroup(getValidGroup());
-        if (ConsoleRequest.askUserTF("Бажаєте змінити курс студента?"))
-            students[studentIndex].setCourse(getValidCourse());
+        System.out.println(students[studentIndex]);
+        int choice = 0;
+        while (choice != 4) {
+            System.out.println("1 - змінити ім'я студента");
+            System.out.println("2 - змінити групу студента");
+            System.out.println("3 - змінити курс студента");
+            System.out.println("4 - закінчити редагування студента");
+            choice = DataInput.getInt("Оберіть дію");
+            switch (choice) {
+                case 1 -> students[studentIndex].setName(getValidName());
+                case 2 -> students[studentIndex].setGroup(getValidGroup());
+                case 3 -> students[studentIndex].setCourse(getValidCourse());
+                case 4 -> {
+                }
+                default -> System.out.println("Неправильне введення даних");
+            }
+        }
     }
 
     /**
