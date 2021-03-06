@@ -72,6 +72,7 @@ public class Chair {
         this.maximumLecturerSize = maximumLecturerSize;
     }
 
+
     /**
      * Add students
      */

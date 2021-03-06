@@ -58,6 +58,10 @@ public class FacultiesHandler {
         }
     }
 
+    public Faculty getFaculty(int facultyIndex) {
+        return faculties[facultyIndex];
+    }
+
     /**
      * Add faculty to the handler
      *
@@ -98,8 +102,17 @@ public class FacultiesHandler {
      */
     public void editFaculty(int facultyIndex) {
         System.out.println("Факультет: " + faculties[facultyIndex]);
-        if (ConsoleRequest.askUserTF("Бажаєте змінити назву факультету?")) {
-            faculties[facultyIndex].setName(getValidName());
+        int choice = 0;
+        while (choice != 2) {
+            System.out.println("1 - Змінити назву факультету");
+            System.out.println("2 - Закінчити редагування факультету");
+            choice = DataInput.getInt("Оберіть дію");
+            switch (choice) {
+                case 1 -> faculties[facultyIndex].setName(getValidName());
+                case 2 -> {
+                }
+                default -> System.out.println("Неправильне введення даних");
+            }
         }
     }
 
