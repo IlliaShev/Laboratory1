@@ -8,6 +8,7 @@ public class Faculty {
      * Faculty name
      */
     private String name;
+    private ChairHandler chairs;
 
 
     /**
@@ -36,6 +37,24 @@ public class Faculty {
         this.name = name;
     }
 
+
+    /**
+     * Edit students
+     */
+    public void editChair() {
+    }
+
+    /**
+     * Add students
+     */
+    public void addChair() {
+    }
+
+    /**
+     * Delete students
+     */
+    public void deleteChair() {
+    }
 
     /**
      * Information about faculty
