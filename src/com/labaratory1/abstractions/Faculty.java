@@ -1,3 +1,7 @@
+package com.labaratory1.abstractions;
+
+import com.labaratory1.handler.*;
+
 public class Faculty {
 
     /**
