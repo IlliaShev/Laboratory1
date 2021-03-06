@@ -35,6 +35,12 @@ public class Faculty {
         this.name = name;
     }
 
+
+    /**
+     * Information about faculty
+     *
+     * @return
+     */
     @Override
     public String toString() {
         return "Факультет: " +
