@@ -1,7 +1,6 @@
 package com.labaratory1.abstractions;
 
 import utils.ConsoleRequest;
-import utils.DataInput;
 import com.labaratory1.handler.*;
 
 public class Chair {
@@ -73,6 +72,14 @@ public class Chair {
     }
 
 
+    public int getCurrentStudents() {
+        return students.getCurrentStudent();
+    }
+
+    public int getCurrentLecturers() {
+        return lectures.getCurrentLecturer();
+    }
+
     /**
      * Add students
      */
@@ -108,7 +115,7 @@ public class Chair {
      */
     public void editLecturer() {
         lectures.showLecturers();
-        lectures.editLecturer(ConsoleRequest.getValidIndex(1, lectures.getCurrentLecture(), "Введіть індекс вчителя для редагування") - 1);
+        lectures.editLecturer(ConsoleRequest.getValidIndex(1, lectures.getCurrentLecturer(), "Введіть індекс вчителя для редагування") - 1);
     }
 
     /**
@@ -116,7 +123,7 @@ public class Chair {
      */
     public void deleteLecturer() {
         lectures.showLecturers();
-        lectures.deleteLecturer(ConsoleRequest.getValidIndex(1, lectures.getCurrentLecture(), "Введіть індекс вчителя для видалення") - 1);
+        lectures.deleteLecturer(ConsoleRequest.getValidIndex(1, lectures.getCurrentLecturer(), "Введіть індекс вчителя для видалення") - 1);
     }
 
     /**
