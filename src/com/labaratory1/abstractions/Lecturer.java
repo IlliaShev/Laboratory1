@@ -118,6 +118,8 @@ public class Lecturer {
      */
     @Override
     public String toString() {
-        return "Ім'я - " + name + "; Вік - " + age + ";";
+        return "Викладач: " +
+                "Ім'я - " + name + ';' +
+                "Вік - " + age + ';';
     }
 }
