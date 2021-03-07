@@ -4,6 +4,9 @@ import utils.ConsoleRequest;
 import utils.DataInput;
 import com.labaratory1.abstractions.*;
 
+/**
+ * DisciplineHandler class
+ */
 public class DisciplineHandler {
     /**
      * Array for storing disciplines
@@ -19,12 +22,19 @@ public class DisciplineHandler {
      */
     private int maxDisciplines;
 
+    /**
+     * Create DisciplineHandler
+     * @param maxDisciplines maxDisciplines
+     */
     public DisciplineHandler(int maxDisciplines) {
         this.maxDisciplines = maxDisciplines;
         disciplines = new Discipline[maxDisciplines];
         currentDiscipline = 0;
     }
 
+    /**
+     * Create DisciplineHandler
+     */
     public DisciplineHandler() {
         this(5);
     }

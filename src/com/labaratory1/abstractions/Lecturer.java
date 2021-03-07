@@ -3,6 +3,9 @@ package com.labaratory1.abstractions;
 import utils.DataInput;
 import com.labaratory1.handler.*;
 
+/**
+ * Lecture class
+ */
 public class Lecturer {
     /**
      * Lecturer name
@@ -91,6 +94,11 @@ public class Lecturer {
         disciplines.editDiscipline(getValidDisciplineIndex());
     }
 
+    /**
+     * Getter getValidDisciplineIndex
+     *
+     * @return DisciplineIndex
+     */
     private int getValidDisciplineIndex() {
         int choice;
         while (true) {

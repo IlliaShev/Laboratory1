@@ -1,10 +1,14 @@
 package utils;
 
+/**
+ * ConsoleRequest class
+ */
 public class ConsoleRequest {
     /**
      * Ask user question with yes/no answer
      *
-     * @return true - uf user answer is "yes", otherwise false
+     * @param question - string questions
+     * @return true - if user answer is "yes", otherwise false
      */
     public static boolean askUserTF(String question) {
         String choice;

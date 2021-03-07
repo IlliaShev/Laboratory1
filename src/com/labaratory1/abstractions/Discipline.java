@@ -2,6 +2,9 @@ package com.labaratory1.abstractions;
 
 import com.labaratory1.handler.*;
 
+/**
+ * Discipline class
+ */
 public class Discipline {
     /**
      * Name of the current discipline
@@ -16,6 +19,12 @@ public class Discipline {
      */
     private double hours;
 
+    /**
+     * Create Discipline
+     * @param name - name
+     * @param credits - credits
+     * @param hours - hours
+     */
     public Discipline(String name, double credits, double hours) {
         this.name = name;
         this.credits = credits;
@@ -31,8 +40,11 @@ public class Discipline {
         return name;
     }
 
+
     /**
      * Set new name to the discipline
+     *
+     * @param name - name
      */
     public void setName(String name) {
         this.name = name;
@@ -50,6 +62,8 @@ public class Discipline {
 
     /**
      * Change value of credits for discipline
+     *
+     * @param credits - credits
      */
     public void setCredits(double credits) {
         this.credits = credits;
@@ -66,6 +80,8 @@ public class Discipline {
 
     /**
      * Set new value of hours to the discipline
+     *
+     * @param hours - hours
      */
     public void setHours(double hours) {
         this.hours = hours;

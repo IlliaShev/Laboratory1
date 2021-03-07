@@ -3,12 +3,18 @@ package com.labaratory1.abstractions;
 import com.labaratory1.handler.*;
 import utils.ConsoleRequest;
 
+/**
+ * Faculty class
+ */
 public class Faculty {
 
     /**
      * Faculty name
      */
     private String name;
+    /**
+     * ChairHandler
+     */
     private ChairHandler chairs;
 
 
@@ -30,10 +36,21 @@ public class Faculty {
         return name;
     }
 
+    /**
+     * Return indexChair
+     *
+     * @param indexChair indexChair
+     * @return indexChair
+     */
     public Chair getChair(int indexChair) {
         return chairs.getChair(indexChair);
     }
 
+    /**
+     * Getter Chairs
+     *
+     * @return arr chair
+     */
     public Chair[] getChairs() {
         return chairs.getChairs();
     }
@@ -41,7 +58,7 @@ public class Faculty {
     /**
      * Change faculty name
      *
-     * @param name
+     * @param name faculty name
      */
     public void setName(String name) {
         this.name = name;
@@ -57,6 +74,11 @@ public class Faculty {
 
     }
 
+    /**
+     * Getter CurrentChair
+     *
+     * @return CurrentChair
+     */
     public int getNumberOfChairs() {
         return chairs.getCurrentChair();
     }
@@ -77,15 +99,13 @@ public class Faculty {
 
     }
 
+    /**
+     * showChairs
+     */
     public void showChairs() {
         chairs.showChairs();
     }
 
-    /**
-     * Information about faculty
-     *
-     * @return
-     */
     @Override
     public String toString() {
         return "Факультет: " +

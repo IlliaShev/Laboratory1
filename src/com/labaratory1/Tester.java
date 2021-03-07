@@ -14,6 +14,9 @@ import utils.Quicksort;
 
 import java.util.ArrayList;
 
+/**
+ * Tester class
+ */
 public class Tester {
     /**
      * Init faculty
@@ -22,7 +25,7 @@ public class Tester {
 
     /**
      * Start program
-     * @param args
+     * @param args string
      */
     public static void main(String[] args) {
         int choice = 0;
@@ -128,7 +131,7 @@ public class Tester {
         Faculty faculty = getFaculty();
         Chair chair = getChair(faculty);
         String name = DataInput.getString("Введіть прізвище студентів яких ви хочете побачити");
-        Student[] students = chair.getStudentsByGroup(name);
+        Student[] students = chair.getStudentsByName(name);
         for (Student student : students) {
             System.out.println(student);
         }
@@ -164,6 +167,10 @@ public class Tester {
         }
     }
 
+    /**
+     * Task5
+     * Get all students in order for the courses.
+     */
     private static void task5() {
         Faculty[] facults = faculties.getFaculties();
         Student[] students = new Student[0];
@@ -267,7 +274,7 @@ public class Tester {
 
     /**
      * Print array to console
-     * @param objects
+     * @param objects object
      */
     private static void printArray(Object[] objects) {
         for (Object object : objects)
@@ -320,7 +327,9 @@ public class Tester {
 
     /**
      * Task 3
-     * Add / delete / edit teacher to the chair.
+     * Add / delete / edit teacher to the chair
+     *
+     * @param chair chair
      */
     private static void workWithLecturers(Chair chair) {
         int choice = 0;

@@ -3,6 +3,9 @@ package com.labaratory1.abstractions;
 import utils.ConsoleRequest;
 import com.labaratory1.handler.*;
 
+/**
+ * Chair class
+ */
 public class Chair {
     /**
      * Chair name
@@ -11,11 +14,11 @@ public class Chair {
     /**
      * Handler Student
      */
-    private StudentHandler students;
+    private final StudentHandler students;
     /**
      * Handler Lecture
      */
-    private LecturerHandler lectures;
+    private final LecturerHandler lectures;
     /**
      * Number of student size
      */
@@ -41,41 +44,80 @@ public class Chair {
     /**
      * Create chair
      *
-     * @param chairName
+     * @param chairName - name chair
      */
     public Chair(String chairName) {
         this(chairName, 10, 10);
     }
 
+    /**
+     * Getter chairName
+     *
+     * @return chairName
+     */
     public String getChairName() {
         return chairName;
     }
 
+    /**
+     * Setter chairName
+     *
+     * @param chairName - chair name
+     */
     public void setChairName(String chairName) {
         this.chairName = chairName;
     }
 
+    /**
+     * Getter maximumStudentSize
+     *
+     * @return maximumStudentSize
+     */
     public int getMaximumStudentSize() {
         return maximumStudentSize;
     }
 
+    /**
+     * Setter maximumStudentSize
+     *
+     * @param maximumStudentSize - maximumStudentSize
+     */
     public void setMaximumStudentSize(int maximumStudentSize) {
         this.maximumStudentSize = maximumStudentSize;
     }
 
+    /**
+     * Getter getMaximumLecturerSize
+     *
+     * @return getMaximumLecturerSize
+     */
     public int getMaximumLecturerSize() {
         return maximumLecturerSize;
     }
 
+    /**
+     * Setter maximumLecturerSize
+     *
+     * @param maximumLecturerSize - maximumLecturerSize
+     */
     public void setMaximumLecturerSize(int maximumLecturerSize) {
         this.maximumLecturerSize = maximumLecturerSize;
     }
 
-
+    /**
+     * Getter getCurrentStudents
+     *
+     * @return getCurrentStudents
+     */
     public int getCurrentStudents() {
         return students.getCurrentStudent();
     }
 
+    /**
+     * Getter getCurrentLecturers
+     *
+     * @return getCurrentLecturers
+     */
     public int getCurrentLecturers() {
         return lectures.getCurrentLecturer();
     }
@@ -127,15 +169,6 @@ public class Chair {
     }
 
     /**
-     * Checkable correct
-     * @param leftBorder
-     * @param rightBorder
-     * @param text
-     * @return
-     */
-
-
-    /**
      * Show students
      */
     public void showStudents() {
@@ -149,11 +182,18 @@ public class Chair {
         lectures.showLecturers();
     }
 
-
+    /**
+     * Getter Students
+     * @return Student
+     */
     public Student[] getStudents() {
         return students.getStudents();
     }
 
+    /**
+     * Getter Lecturer
+     * @return Lecturer
+     */
     public Lecturer[] getLecturers() {
         return lectures.getLecturers();
     }
@@ -195,7 +235,7 @@ public class Chair {
     /**
      * Information about chair
      *
-     * @return
+     * @return Information about chair
      */
     @Override
     public String toString() {

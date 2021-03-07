@@ -4,6 +4,9 @@ import utils.ConsoleRequest;
 import utils.DataInput;
 import com.labaratory1.abstractions.*;
 
+/**
+ * FacultiesHandler class
+ */
 public class FacultiesHandler {
     /**
      * Array with faculties
@@ -58,11 +61,21 @@ public class FacultiesHandler {
         }
     }
 
+    /**
+     * getFaculty
+     *
+     * @param facultyIndex facultyIndex
+     * @return Faculty
+     */
     public Faculty getFaculty(int facultyIndex) {
         return faculties[facultyIndex];
     }
 
-
+    /**
+     * getFaculties
+     *
+     * @return Faculty
+     */
     public Faculty[] getFaculties() {
         return faculties;
     }
@@ -114,8 +127,7 @@ public class FacultiesHandler {
             choice = DataInput.getInt("Оберіть дію");
             switch (choice) {
                 case 1 -> faculties[facultyIndex].setName(getValidName());
-                case 2 -> {
-                }
+                case 2 -> { }
                 default -> System.out.println("Неправильне введення даних");
             }
         }
@@ -123,6 +135,8 @@ public class FacultiesHandler {
 
     /**
      * Create new faculty
+     *
+     * @return Faculty
      */
     private Faculty buildFaculty() {
         String name = getValidName();

@@ -4,19 +4,40 @@ import com.sun.jdi.IntegerValue;
 
 import java.io.*;
 
+/**
+ * DataInput class
+ */
 public final class DataInput {
 
+    /**
+     * getLong
+     *
+     * @param text text
+     * @return outputText
+     */
     public static Long getLong(String text) {
         String s = getString(text);
         return Long.valueOf(s);
 
     }
 
+    /**
+     * getChar
+     *
+     * @param text text
+     * @return outputText
+     */
     public static char getChar(String text) {
         String s = getString(text);
         return s.charAt(0);
     }
 
+    /**
+     * getInt
+     *
+     * @param text text
+     * @return outputText
+     */
     public static Integer getInt(String text) {
         String s = getString(text);
         while (containNotDigits(s)) {
@@ -27,6 +48,12 @@ public final class DataInput {
 
     }
 
+    /**
+     * getDouble
+     *
+     * @param text text
+     * @return outputText
+     */
     public static Double getDouble(String text) {
         String s = getString(text);
         while (!validDouble(s)) {
@@ -36,6 +63,11 @@ public final class DataInput {
         return Double.valueOf(s);
     }
 
+    /**
+     * validDouble
+     * @param s text
+     * @return boolean
+     */
     private static boolean validDouble(String s) {
         if (s.charAt(0) < '0' && s.charAt(0) > '9') {
             if (s.charAt(0) != '-')
@@ -56,6 +88,12 @@ public final class DataInput {
         return true;
     }
 
+    /**
+     * containNotDigits
+     *
+     * @param s text
+     * @return boolean
+     */
     private static boolean containNotDigits(String s) {
         if (s.charAt(0) < '0' && s.charAt(0) > '9') {
             if (s.charAt(0) != '-')
@@ -69,6 +107,11 @@ public final class DataInput {
         return false;
     }
 
+    /**
+     * getString
+     * @param text text
+     * @return text
+     */
     public static String getString(String text) {
         if (!text.equals(""))
             System.out.print(text + ": ");

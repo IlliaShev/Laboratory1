@@ -3,8 +3,19 @@ package utils;
 import java.lang.reflect.Array;
 import java.util.Comparator;
 
+/**
+ * Quicksort class
+ */
 public class Quicksort {
 
+    /**
+     * quickSort
+     * @param array - array
+     * @param from - from
+     * @param to - to
+     * @param comparator - comparator
+     * @return Object
+     */
     public static Object[] quickSort(Object[] array, int from, int to, Comparator comparator) {
         if (from < to) {
             int divideElem = partition(array, from, to, comparator);
@@ -14,6 +25,15 @@ public class Quicksort {
         return array;
     }
 
+    /**
+     * partition
+     *
+     * @param array - array
+     * @param from - from
+     * @param to - to
+     * @param comparator - comparator
+     * @return Object
+     */
     private static int partition(Object[] array, int from, int to, Comparator comparator) {
         int leftIndex = from;
         int rightIndex = to;
@@ -38,6 +58,12 @@ public class Quicksort {
         return leftIndex;
     }
 
+    /**
+     * swapElem
+     * @param array - array
+     * @param leftIndex - leftIndex
+     * @param rightIndex - rightIndex
+     */
     private static void swapElem(Object[] array, int leftIndex, int rightIndex) {
         Object temp = array[leftIndex];
         array[leftIndex] = array[rightIndex];

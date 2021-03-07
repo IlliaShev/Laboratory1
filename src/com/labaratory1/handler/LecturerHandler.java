@@ -4,6 +4,9 @@ import utils.ConsoleRequest;
 import utils.DataInput;
 import com.labaratory1.abstractions.*;
 
+/**
+ * LecturerHandler class
+ */
 public class LecturerHandler {
     /**
      * Array with lecturers
@@ -54,9 +57,12 @@ public class LecturerHandler {
         return currentLecturer;
     }
 
-    public Lecturer[] getLecturers() {
-        return lecturers;
-    }
+    /**
+     * getLecturers
+     *
+     * @return Lecturer
+     */
+    public Lecturer[] getLecturers() { return lecturers; }
 
     /**
      * Print to the console all the lecturers that was added
@@ -136,6 +142,8 @@ public class LecturerHandler {
 
     /**
      * Create new lecturer
+     *
+     * @return Lecturer
      */
     private Lecturer buildLecturer() {
         String name = getValidName();
@@ -201,6 +209,11 @@ public class LecturerHandler {
         return res.toString();
     }
 
+    /**
+     * getLecturersByName
+     * @param name name
+     * @return Lecturer
+     */
     public Lecturer[] getLecturersByName(String name) {
         int arrSize = 0;
         for (int i = 0; i < currentLecturer; i++) {

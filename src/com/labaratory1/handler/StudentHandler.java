@@ -4,6 +4,9 @@ import utils.ConsoleRequest;
 import utils.DataInput;
 import com.labaratory1.abstractions.*;
 
+/**
+ * StudentHandler class
+ */
 public class StudentHandler {
     /**
      * Array with students
@@ -54,9 +57,12 @@ public class StudentHandler {
     }
 
 
-    public Student[] getStudents() {
-        return students;
-    }
+    /**
+     * getStudents
+     *
+     * @return Student
+     */
+    public Student[] getStudents() { return students; }
 
     /**
      * Add student to the handler
@@ -126,6 +132,8 @@ public class StudentHandler {
 
     /**
      * Create new student
+     *
+     * @return Student
      */
     private Student buildStudent() {
         String name = getValidName();
