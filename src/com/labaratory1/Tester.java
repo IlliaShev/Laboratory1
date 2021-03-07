@@ -3,9 +3,11 @@ package com.labaratory1;
 import com.labaratory1.abstractions.Chair;
 import com.labaratory1.abstractions.Faculty;
 import com.labaratory1.abstractions.Student;
+import com.labaratory1.comparators.StudentNameComparator;
 import com.labaratory1.handler.FacultiesHandler;
 import utils.ConsoleRequest;
 import utils.DataInput;
+import utils.Quicksort;
 
 public class Tester {
     private static FacultiesHandler faculties = new FacultiesHandler();
@@ -36,6 +38,7 @@ public class Tester {
                     workWithChairSL();
                 }
                 case 9 -> getStudentsFromChairByCourse();
+                case 10 -> task10();
                 case 11 -> {
                 }
                 default -> System.out.println("Неправильне введення даних");
@@ -43,13 +46,25 @@ public class Tester {
         }
     }
 
-    private static void getStudentsFromChairByCourse() {
-        Faculty faculty = getFaculty();
-        Chair chair = getChair(faculty);
-        Student[] students = chair.getStudentsByCourse(ConsoleRequest.getValidIndex(1, 6, "Введіть курс, студентів якого ви хочете побачити"));
+    private static void task10() {
+        Student[] students = getArrStudentsFromChairByCours();
+        students = (Student[]) Quicksort.quickSort(students, 0, students.length - 1, new StudentNameComparator());
         for (Student student : students) {
             System.out.println(student);
         }
+    }
+
+    private static void getStudentsFromChairByCourse() {
+        Student[] students = getArrStudentsFromChairByCours();
+        for (Student student : students) {
+            System.out.println(student);
+        }
+    }
+
+    private static Student[] getArrStudentsFromChairByCours() {
+        Faculty faculty = getFaculty();
+        Chair chair = getChair(faculty);
+        return chair.getStudentsByCourse(ConsoleRequest.getValidIndex(1, 6, "Введіть курс, студентів якого ви хочете побачити"));
     }
 
     private static void workWithChairSL() {
