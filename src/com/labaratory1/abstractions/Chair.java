@@ -3,6 +3,8 @@ package com.labaratory1.abstractions;
 import utils.ConsoleRequest;
 import com.labaratory1.handler.*;
 
+import java.util.ArrayList;
+
 /**
  * Chair class
  */
@@ -195,15 +197,28 @@ public class Chair {
      * @return Student
      */
     public Student[] getStudents() {
-        return students.getStudents();
+        Student[] studentsArr = students.getStudents();
+        ArrayList<Student> students1 = new ArrayList<>();
+        for (Student student : studentsArr) {
+            if (student != null)
+                students1.add(student);
+        }
+        return students1.toArray(Student[]::new);
     }
+
 
     /**
      * Getter Lecturer
      * @return Lecturer
      */
     public Lecturer[] getLecturers() {
-        return lectures.getLecturers();
+        Lecturer[] lecturersArr = lectures.getLecturers();
+        ArrayList<Lecturer> lecturers1 = new ArrayList<>();
+        for (Lecturer lecturer : lecturersArr) {
+            if (lecturer != null)
+                lecturers1.add(lecturer);
+        }
+        return lecturers1.toArray(Lecturer[]::new);
     }
 
     /**

@@ -26,11 +26,19 @@ public class Tester {
 
     private static void initialAdding() {
         faculties.addFaculty(new Faculty("ФСНСТ"));
-        Faculty faculty = faculties.getFaculty(0);
+        Faculty facultyFirst = faculties.getFaculty(0);
+
         Chair firstChair = new Chair("Кафедра психології", 100, 10);
         Chair secondChair = new Chair("Кафедра соціології", 50, 8);
-        faculty.addChair(firstChair);
-        faculty.addChair(secondChair);
+        facultyFirst.addChair(firstChair);
+        facultyFirst.addChair(secondChair);
+
+        Chair thirdChair = new Chair("Кафедра математики", 100, 10);
+        Chair fourthChair = new Chair("Кафедра мультимедії", 50, 8);
+        Faculty facultySecond = faculties.getFaculty(1);
+        faculties.addFaculty(new Faculty("ФІ"));
+        facultySecond.addChair(thirdChair);
+        facultySecond.addChair(fourthChair);
 
         //students first chair first faculty
         firstChair.addStudent(new Student("Шевчик", "ФСНСТПСИХ1", 1));
@@ -44,6 +52,18 @@ public class Tester {
         firstChair.addStudent(new Student("Гаврилюк", "ФСНСТПСИХ2", 2));
         firstChair.addStudent(new Student("Коломієць", "ФСНСТПСИХ3", 3));
 
+        //students firstI chair second faculty
+        thirdChair.addStudent(new Student("Шевчик", "ФІACД1", 1));
+        thirdChair.addStudent(new Student("Мельник", "ФІACД2", 2));
+        thirdChair.addStudent(new Student("Шевчук", "ФІACД4", 4));
+        thirdChair.addStudent(new Student("Мороз", "ФІACД2", 2));
+        thirdChair.addStudent(new Student("Ткачук", "ФІACД3", 3));
+        thirdChair.addStudent(new Student("Бойко", "ФІACД2", 2));
+        thirdChair.addStudent(new Student("Кравчук", "ФІACД1", 1));
+        thirdChair.addStudent(new Student("Швець", "ФІACД6", 6));
+        thirdChair.addStudent(new Student("Гаврилюк", "ФІACД2", 2));
+        thirdChair.addStudent(new Student("Коломієць", "ФІACД3", 3));
+
         //lecturers first chair first faculty
         firstChair.addLecturer(new Lecturer("Попович", 45, 3));
         firstChair.addLecturer(new Lecturer("Марчук", 52, 5));
@@ -54,6 +74,17 @@ public class Tester {
         firstChair.addLecturer(new Lecturer("Жорнік", 21, 1));
         firstChair.addLecturer(new Lecturer("Нестеренко", 29, 2));
         firstChair.addLecturer(new Lecturer("Макаренко", 36, 3));
+
+        //lecturers firstI chair first faculty
+        thirdChair.addLecturer(new Lecturer("Попович", 45, 3));
+        thirdChair.addLecturer(new Lecturer("Марчук", 52, 5));
+        thirdChair.addLecturer(new Lecturer("Тищенко", 33, 2));
+        thirdChair.addLecturer(new Lecturer("Вовк", 39, 1));
+        thirdChair.addLecturer(new Lecturer("Білоус", 48, 3));
+        thirdChair.addLecturer(new Lecturer("Шевченко", 61, 2));
+        thirdChair.addLecturer(new Lecturer("Жорнік", 21, 1));
+        thirdChair.addLecturer(new Lecturer("Нестеренко", 29, 2));
+        thirdChair.addLecturer(new Lecturer("Макаренко", 36, 3));
 
         //students second chair first faculty
         secondChair.addStudent(new Student("Романюк", "ФСНСТСОЦ1", 1));
@@ -67,6 +98,18 @@ public class Tester {
         secondChair.addStudent(new Student("Дядюк", "ФСНСТСОЦ1", 4));
         secondChair.addStudent(new Student("Фомюк", "ФСНСТСОЦ1", 1));
 
+        //students secondI chair second faculty
+        fourthChair.addStudent(new Student("Романюк", "ФІММОЗ1", 1));
+        fourthChair.addStudent(new Student("Мазур", "ФІММОЗ3", 3));
+        fourthChair.addStudent(new Student("Кушнір", "ФІММОЗ2", 2));
+        fourthChair.addStudent(new Student("Кірічок", "ФІММОЗ2", 2));
+        fourthChair.addStudent(new Student("Сидорчук", "ФІММОЗ4", 4));
+        fourthChair.addStudent(new Student("Павленко", "ФІММОЗ2", 2));
+        fourthChair.addStudent(new Student("Фольга", "ФІММОЗ3", 3));
+        fourthChair.addStudent(new Student("Савчук", "ФІММОЗ2", 2));
+        fourthChair.addStudent(new Student("Дядюк", "ФІММОЗ4", 4));
+        fourthChair.addStudent(new Student("Фомюк", "ФІММОЗ1", 1));
+
         //lecturers second chair first faculty
         secondChair.addLecturer(new Lecturer("Бабенко", 45, 2));
         secondChair.addLecturer(new Lecturer("Терещенко", 51, 1));
@@ -76,6 +119,16 @@ public class Tester {
         secondChair.addLecturer(new Lecturer("Бабій", 48, 2));
         secondChair.addLecturer(new Lecturer("Москаленко", 61, 2));
         secondChair.addLecturer(new Lecturer("Молотобоєць", 44, 3));
+
+        //lecturers second chair first faculty
+        fourthChair.addLecturer(new Lecturer("Бабенко", 45, 2));
+        fourthChair.addLecturer(new Lecturer("Терещенко", 51, 1));
+        fourthChair.addLecturer(new Lecturer("Жмаков", 25, 1));
+        fourthChair.addLecturer(new Lecturer("Юрченко", 35, 2));
+        fourthChair.addLecturer(new Lecturer("Городович", 46, 4));
+        fourthChair.addLecturer(new Lecturer("Бабій", 48, 2));
+        fourthChair.addLecturer(new Lecturer("Москаленко", 61, 2));
+        fourthChair.addLecturer(new Lecturer("Молотобоєць", 44, 3));
     }
 
 
@@ -188,12 +241,23 @@ public class Tester {
      * Search by Student use name
      */
     private static void searchByStudentName() {
-        Faculty faculty = getFaculty();
-        Chair chair = getChair(faculty);
         String name = DataInput.getString("Введіть прізвище студентів яких ви хочете побачити");
-        Student[] students = chair.getStudentsByName(name);
-        for (Student student : students) {
-            System.out.println(student);
+        Faculty[] facults = faculties.getFaculties();
+        for (Faculty faculty : facults) {
+            if (faculty == null)
+                break;
+            Chair[] chairs = faculty.getChairs();
+            for (Chair chair : chairs) {
+                if (chair == null)
+                    break;
+                Student[] students = chair.getStudents();
+                for (Student student : students) {
+                    if (student == null)
+                        break;
+                    if (student.getName().equals(name))
+                        System.out.println(student);
+                }
+            }
         }
     }
 
@@ -202,13 +266,14 @@ public class Tester {
      */
     private static void searchByLecture() {
         int choice = 0;
-        while(choice != 3){
+        while (choice != 2) {
             System.out.println("1 - Шукати викладача по ПІБ");
             System.out.println("2 - Закінчити роботу в даному блоці");
             choice = DataInput.getInt("Оберіть дію");
-            switch(choice){
+            switch (choice) {
                 case 1 -> searchByLectureName();
-                case 2 -> {}
+                case 2 -> {
+                }
                 default -> System.out.println("Неправильне введення даних");
             }
         }
@@ -224,7 +289,7 @@ public class Tester {
         String name = DataInput.getString("Введіть прізвище, викладачів яких ви хочете побачити");
         Lecturer[] lecturers = chair.getLecturersByName(name);
         for (Lecturer lecturer : lecturers) {
-            System.out.println(lecturers);
+            System.out.println(lecturer);
         }
     }
 
@@ -236,11 +301,16 @@ public class Tester {
         Faculty[] facults = faculties.getFaculties();
         Student[] students = new Student[0];
         for (Faculty faculty : facults) {
+            if (faculty == null)
+                continue;
             Chair[] chairs = faculty.getChairs();
             for (Chair chair : chairs) {
+                if (chair == null)
+                    continue;
                 Student[] buffStudents = new Student[students.length + chair.getStudents().length];
                 System.arraycopy(students, 0, buffStudents, 0, students.length);
                 System.arraycopy(chair.getStudents(), 0, buffStudents, students.length, chair.getStudents().length);
+                students = buffStudents;
             }
         }
         students = (Student[]) Quicksort.quickSort(students, 0, students.length - 1, new StudentCourseComparator());
@@ -257,12 +327,16 @@ public class Tester {
         Lecturer[] lecturers = new Lecturer[0];
         Student[] students = new Student[0];
         for (Chair chair : chairs) {
+            if (chair == null)
+                continue;
             Lecturer[] buffLecturers = new Lecturer[lecturers.length + chair.getLecturers().length];
             System.arraycopy(lecturers, 0, buffLecturers, 0, lecturers.length);
             System.arraycopy(chair.getLecturers(), 0, buffLecturers, lecturers.length, chair.getLecturers().length);
+            lecturers = buffLecturers;
             Student[] buffStudents = new Student[students.length + chair.getStudents().length];
             System.arraycopy(students, 0, buffStudents, 0, students.length);
             System.arraycopy(chair.getStudents(), 0, buffStudents, students.length, chair.getStudents().length);
+            students = buffStudents;
         }
         lecturers = (Lecturer[]) Quicksort.quickSort(lecturers, 0, lecturers.length - 1, new LecturerNameComparator());
         students = (Student[]) Quicksort.quickSort(students, 0, students.length - 1, new StudentNameComparator());
@@ -338,8 +412,10 @@ public class Tester {
      * @param objects object
      */
     private static void printArray(Object[] objects) {
-        for (Object object : objects)
-            System.out.println(object);
+        for (Object object : objects) {
+            if (object != null)
+                System.out.println(object);
+        }
     }
 
     /**
