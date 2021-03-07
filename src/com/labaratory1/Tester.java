@@ -35,8 +35,8 @@ public class Tester {
 
         Chair thirdChair = new Chair("Кафедра математики", 100, 10);
         Chair fourthChair = new Chair("Кафедра мультимедії", 50, 8);
-        Faculty facultySecond = faculties.getFaculty(1);
         faculties.addFaculty(new Faculty("ФІ"));
+        Faculty facultySecond = faculties.getFaculty(1);
         facultySecond.addChair(thirdChair);
         facultySecond.addChair(fourthChair);
 
@@ -221,19 +221,47 @@ public class Tester {
      * Search by Student use course
      */
     private static void searchByStudentCourse() {
-        getStudentsFromChairByCourse();
+        int course = DataInput.getInt("Введіть курс, студентів яких ви хочете побачити");
+        Faculty[] facults = faculties.getFaculties();
+        for (Faculty faculty : facults) {
+            if (faculty == null)
+                break;
+            Chair[] chairs = faculty.getChairs();
+            for (Chair chair : chairs) {
+                if (chair == null)
+                    break;
+                Student[] students = chair.getStudents();
+                for (Student student : students) {
+                    if (student == null)
+                        break;
+                    if (student.getCourse() == course)
+                        System.out.println(student);
+                }
+            }
+        }
     }
 
     /**
      * Search by Student use group
      */
     private static void searchByStudentGroup() {
-        Faculty faculty = getFaculty();
-        Chair chair = getChair(faculty);
         String group = DataInput.getString("Введіть групу, студентів яких ви хочете побачити");
-        Student[] students = chair.getStudentsByGroup(group);
-        for (Student student : students) {
-            System.out.println(student);
+        Faculty[] facults = faculties.getFaculties();
+        for (Faculty faculty : facults) {
+            if (faculty == null)
+                break;
+            Chair[] chairs = faculty.getChairs();
+            for (Chair chair : chairs) {
+                if (chair == null)
+                    break;
+                Student[] students = chair.getStudents();
+                for (Student student : students) {
+                    if (student == null)
+                        break;
+                    if (student.getGroup().equals(group))
+                        System.out.println(student);
+                }
+            }
         }
     }
 
@@ -284,12 +312,23 @@ public class Tester {
      * Search by Lecture use name
      */
     private static void searchByLectureName() {
-        Faculty faculty = getFaculty();
-        Chair chair = getChair(faculty);
         String name = DataInput.getString("Введіть прізвище, викладачів яких ви хочете побачити");
-        Lecturer[] lecturers = chair.getLecturersByName(name);
-        for (Lecturer lecturer : lecturers) {
-            System.out.println(lecturer);
+        Faculty[] facults = faculties.getFaculties();
+        for (Faculty faculty : facults) {
+            if (faculty == null)
+                break;
+            Chair[] chairs = faculty.getChairs();
+            for (Chair chair : chairs) {
+                if (chair == null)
+                    break;
+                Lecturer[] lecturers = chair.getLecturers();
+                for (Lecturer lecturer : lecturers) {
+                    if (lecturer == null)
+                        break;
+                    if (lecturer.getName().equals(name))
+                        System.out.println(lecturer);
+                }
+            }
         }
     }
 
