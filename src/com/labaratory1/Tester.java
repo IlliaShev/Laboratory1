@@ -105,19 +105,33 @@ public class Tester {
      * Search by Student use course
      */
     private static void searchByStudentCourse() {
+        getStudentsFromChairByCourse();
     }
 
     /**
      * Search by Student use group
      */
     private static void searchByStudentGroup() {
+        Faculty faculty = getFaculty();
+        Chair chair = getChair(faculty);
+        String group = DataInput.getString("Введіть групу, студентів яких ви хочете побачити");
+        Student[] students = chair.getStudentsByGroup(group);
+        for (Student student : students) {
+            System.out.println(student);
+        }
     }
 
     /**
      * Search by Student use name
      */
     private static void searchByStudentName() {
-
+        Faculty faculty = getFaculty();
+        Chair chair = getChair(faculty);
+        String name = DataInput.getString("Введіть прізвище студентів яких ви хочете побачити");
+        Student[] students = chair.getStudentsByGroup(name);
+        for (Student student : students) {
+            System.out.println(student);
+        }
     }
 
     /**
@@ -141,6 +155,13 @@ public class Tester {
      * Search by Lecture use name
      */
     private static void searchByLectureName() {
+        Faculty faculty = getFaculty();
+        Chair chair = getChair(faculty);
+        String name = DataInput.getString("Введіть прізвище, викладачів яких ви хочете побачити");
+        Lecturer[] lecturers = chair.getLecturersByName(name);
+        for (Lecturer lecturer : lecturers) {
+            System.out.println(lecturers);
+        }
     }
 
     private static void task5() {

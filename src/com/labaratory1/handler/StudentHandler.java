@@ -174,6 +174,49 @@ public class StudentHandler {
     }
 
     /**
+     * Get array students by group
+     *
+     * @param group - group
+     * @return array students by course
+     */
+    public Student[] getStudentsByGroup(String group) {
+        int arrSize = 0;
+        for (int i = 0; i < currentStudent; i++) {
+            if (students[i].getGroup().equals(group))
+                arrSize++;
+        }
+        Student[] res = new Student[arrSize];
+        int currIn = 0;
+        for (int i = 0; i < currentStudent; i++) {
+            if (students[i].getGroup().equals(group))
+                res[currIn++] = students[i];
+        }
+        return res;
+    }
+
+
+    /**
+     * Get array students by name
+     *
+     * @param name - name
+     * @return array students by name
+     */
+    public Student[] getStudentsByName(String name) {
+        int arrSize = 0;
+        for (int i = 0; i < currentStudent; i++) {
+            if (students[i].getName().equals(name))
+                arrSize++;
+        }
+        Student[] res = new Student[arrSize];
+        int currIn = 0;
+        for (int i = 0; i < currentStudent; i++) {
+            if (students[i].getName().equals(name))
+                res[currIn++] = students[i];
+        }
+        return res;
+    }
+
+    /**
      * Get valid course student
      *
      * @return valid course

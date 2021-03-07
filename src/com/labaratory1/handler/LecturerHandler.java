@@ -200,4 +200,19 @@ public class LecturerHandler {
         }
         return res.toString();
     }
+
+    public Lecturer[] getLecturersByName(String name) {
+        int arrSize = 0;
+        for (int i = 0; i < currentLecturer; i++) {
+            if (lecturers[i].getName().equals(name))
+                arrSize++;
+        }
+        Lecturer[] res = new Lecturer[arrSize];
+        int currIn = 0;
+        for (int i = 0; i < currentLecturer; i++) {
+            if (lecturers[i].getName().equals(name))
+                res[currIn++] = lecturers[i];
+        }
+        return res;
+    }
 }

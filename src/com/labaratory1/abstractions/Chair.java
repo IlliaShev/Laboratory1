@@ -169,6 +169,30 @@ public class Chair {
     }
 
     /**
+     * Get students by group
+     *
+     * @param group - group
+     * @return students by group
+     */
+    public Student[] getStudentsByGroup(String group){return students.getStudentsByGroup(group);}
+
+    /**
+     * Get students by name
+     *
+     * @param name - name
+     * @return students by name
+     */
+    public Student[] getStudentsByName(String name){return students.getStudentsByName(name);}
+
+    /**
+     * Get students by name
+     *
+     * @param name - name
+     * @return students by name
+     */
+    public Lecturer[] getLecturersByName(String name){return lectures.getLecturersByName(name);}
+
+    /**
      * Information about chair
      *
      * @return
