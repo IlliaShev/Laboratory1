@@ -1,8 +1,7 @@
 package com.labaratory1.abstractions;
 
-/**
- * Student class
- */
+import com.labaratory1.handler.*;
+
 public class Student {
     /**
      * Student name
