@@ -74,6 +74,7 @@ public class Tester {
             System.out.println("1 - Робота зі студентами");
             System.out.println("2 - Робота з викладачами");
             System.out.println("3 - Закінчити роботу в даному блоці");
+            choicePerson = DataInput.getInt("Оберіть");
             switch(choicePerson){
                 case 1 -> searchByStudent();
                 case 2 -> searchByLecture();
@@ -93,6 +94,7 @@ public class Tester {
             System.out.println("2 - Шукати студента по групі");
             System.out.println("3 - Шукати студента по курсу");
             System.out.println("4 - Закінчити роботу в даному блоці");
+            choice = DataInput.getInt("Оберіть дію");
             switch(choice){
                 case 1 -> searchByStudentName();
                 case 2 -> searchByStudentGroup();
@@ -145,6 +147,7 @@ public class Tester {
         while(choice != 3){
             System.out.println("1 - Шукати викладача по ПІБ");
             System.out.println("2 - Закінчити роботу в даному блоці");
+            choice = DataInput.getInt("Оберіть дію");
             switch(choice){
                 case 1 -> searchByLectureName();
                 case 2 -> {}
@@ -463,6 +466,8 @@ public class Tester {
                             1, faculties.getCurrentFaculty(), "Введіть номер факультету") - 1);
                 }
                 case 4 -> faculties.showFaculty();
+                case 5 -> {
+                }
                 default -> System.out.println("Неправильне введення даних");
             }
         }
