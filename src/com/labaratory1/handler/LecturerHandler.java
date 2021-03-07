@@ -50,7 +50,9 @@ public class LecturerHandler {
      *
      * @return current lecture
      */
-    public int getCurrentLecture() { return currentLecturer; }
+    public int getCurrentLecturer() {
+        return currentLecturer;
+    }
 
     /**
      * Print to the console all the lecturers that was added
