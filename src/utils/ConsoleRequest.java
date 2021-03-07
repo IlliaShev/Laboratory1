@@ -18,6 +18,13 @@ public class ConsoleRequest {
         }
     }
 
+    /**
+     * Checkable index in range
+     * @param leftBorder - left range
+     * @param rightBorder - right range
+     * @param text - message
+     * @return index
+     */
     public static int getValidIndex(int leftBorder, int rightBorder, String text) {
         int index = DataInput.getInt(text);
         while (index < leftBorder || index > rightBorder) {
