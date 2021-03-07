@@ -39,20 +39,66 @@ public class Tester {
             switch (choice) {
                 case 1 -> workWithFaculty();
                 case 2 -> workWithChair();
-                case 3 -> {
-                    workWithChairSL();
-                }
+                case 3 -> workWithChairSL();
+                case 4 -> task4();
                 case 5 -> task5();
                 case 6 -> task6();
                 case 7 -> task7();
                 case 8 -> task8();
                 case 9 -> getStudentsFromChairByCourse();
                 case 10 -> task10();
-                case 11 -> {
-                }
+                case 11 -> { }
                 default -> System.out.println("Неправильне введення даних");
             }
         }
+        System.out.println("Дякуємо, виконали Шевчик Ілля та Джос Олексій");
+    }
+
+    private static void task4() {
+        int choicePerson = 0;
+        while(choicePerson != 3){
+            System.out.println("1 - Робота зі студентами");
+            System.out.println("2 - Робота з викладачами");
+            System.out.println("3 - Закінчити роботу в даному блоці");
+            switch(choicePerson){
+                case 1 -> searchByStudent();
+                case 2 -> searchByLecture();
+                case 3 -> { }
+                default -> System.out.println("Неправильне введення даних");
+            }
+        }
+    }
+
+    private static void searchByStudent() {
+        int choice = 0;
+        while(choice != 4){
+            System.out.println("1 - Шукати студента по ПІБ");
+            System.out.println("2 - Шукати студента по групі");
+            System.out.println("3 - Шукати студента по курсу");
+            System.out.println("4 - Закінчити роботу в даному блоці");
+            switch(choice){
+                case 1 -> searchByStudentName();
+                case 2 -> searchByStudentGroup();
+                case 3 -> searchByStudentCourse();
+                case 4 -> {}
+                default -> System.out.println("Неправильне введення даних");
+            }
+        }
+
+    }
+
+    private static void searchByLecture() {
+        int choice = 0;
+        while(choice != 3){
+            System.out.println("1 - Шукати викладача по ПІБ");
+            System.out.println("2 - Закінчити роботу в даному блоці");
+            switch(choice){
+                case 1 -> searchByLectureName();
+                case 2 -> {}
+                default -> System.out.println("Неправильне введення даних");
+            }
+        }
+
     }
 
     private static void task5() {
