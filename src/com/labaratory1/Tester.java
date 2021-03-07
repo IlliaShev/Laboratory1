@@ -15,8 +15,15 @@ import utils.Quicksort;
 import java.util.ArrayList;
 
 public class Tester {
+    /**
+     * Init faculty
+     */
     private static FacultiesHandler faculties = new FacultiesHandler();
 
+    /**
+     * Start program
+     * @param args
+     */
     public static void main(String[] args) {
         int choice = 0;
         while (choice != 11) {
@@ -54,6 +61,10 @@ public class Tester {
         System.out.println("Дякуємо, виконали Шевчик Ілля та Джос Олексій");
     }
 
+    /**
+     * task4
+     * Find a student / teacher by name, course or group
+     */
     private static void task4() {
         int choicePerson = 0;
         while(choicePerson != 3){
@@ -69,6 +80,9 @@ public class Tester {
         }
     }
 
+    /**
+     * Search by Student
+     */
     private static void searchByStudent() {
         int choice = 0;
         while(choice != 4){
@@ -87,6 +101,28 @@ public class Tester {
 
     }
 
+    /**
+     * Search by Student use course
+     */
+    private static void searchByStudentCourse() {
+    }
+
+    /**
+     * Search by Student use group
+     */
+    private static void searchByStudentGroup() {
+    }
+
+    /**
+     * Search by Student use name
+     */
+    private static void searchByStudentName() {
+
+    }
+
+    /**
+     * Search by Lecture
+     */
     private static void searchByLecture() {
         int choice = 0;
         while(choice != 3){
@@ -99,6 +135,12 @@ public class Tester {
             }
         }
 
+    }
+
+    /**
+     * Search by Lecture use name
+     */
+    private static void searchByLectureName() {
     }
 
     private static void task5() {
@@ -116,6 +158,10 @@ public class Tester {
         printArray(students);
     }
 
+    /**
+     * Task 6
+     * List all students / faculty members in alphabetical order
+     */
     private static void task6() {
         Faculty faculty = getFaculty();
         Chair[] chairs = faculty.getChairs();
@@ -148,6 +194,10 @@ public class Tester {
 
     }
 
+    /**
+     * Task 7
+     * Bring all students of the department organized by courses
+     */
     private static void task7() {
         Faculty faculty = getFaculty();
         Chair chair = getChair(faculty);
@@ -155,6 +205,10 @@ public class Tester {
         printArray(students);
     }
 
+    /**
+     * Task 8
+     * List all students / teachers of the department in alphabetical order
+     */
     private static void task8() {
         Faculty faculty = getFaculty();
         Chair chair = getChair(faculty);
@@ -180,17 +234,29 @@ public class Tester {
         }
     }
 
+    /**
+     * Task 10
+     * List all students of the department of the specified course in alphabetical order.
+     */
     private static void task10() {
         Student[] students = getArrStudentsFromChairByCourse();
         students = (Student[]) Quicksort.quickSort(students, 0, students.length - 1, new StudentNameComparator());
         printArray(students);
     }
 
+    /**
+     * Print array to console
+     * @param objects
+     */
     private static void printArray(Object[] objects) {
         for (Object object : objects)
             System.out.println(object);
     }
 
+    /**
+     * Task 9
+     * Withdraw all students of the department of the specified course
+     */
     private static void getStudentsFromChairByCourse() {
         Student[] students = getArrStudentsFromChairByCourse();
         for (Student student : students) {
@@ -198,12 +264,20 @@ public class Tester {
         }
     }
 
+    /**
+     * Student array by course
+     * @return Student array by course
+     */
     private static Student[] getArrStudentsFromChairByCourse() {
         Faculty faculty = getFaculty();
         Chair chair = getChair(faculty);
         return chair.getStudentsByCourse(ConsoleRequest.getValidIndex(1, 6, "Введіть курс, студентів якого ви хочете побачити"));
     }
 
+    /**
+     * Task 2
+     * Create / delete / edit the chair of the faculty.
+     */
     private static void workWithChairSL() {
         Faculty faculty = getFaculty();
         Chair chair = getChair(faculty);
@@ -223,6 +297,10 @@ public class Tester {
         }
     }
 
+    /**
+     * Task 3
+     * Add / delete / edit teacher to the chair.
+     */
     private static void workWithLecturers(Chair chair) {
         int choice = 0;
         while (choice != 5) {
@@ -248,6 +326,10 @@ public class Tester {
         }
     }
 
+    /**
+     * Add / delete / edit student to the chair.
+     * @param chair - chair
+     */
     private static void workWithStudents(Chair chair) {
         int choice = 0;
         while (choice != 5) {
@@ -273,6 +355,9 @@ public class Tester {
         }
     }
 
+    /**
+     * Add / delete / edit  chair.
+     */
     private static void workWithChair() {
         Faculty faculty = getFaculty();
         int choice = 0;
@@ -299,16 +384,29 @@ public class Tester {
         }
     }
 
+    /**
+     * Return faculty
+     * @return - faculty
+     */
     private static Faculty getFaculty() {
         faculties.showFaculty();
         return faculties.getFaculty(ConsoleRequest.getValidIndex(1, faculties.getCurrentFaculty(), "Введіть номер факультету") - 1);
     }
 
+    /**
+     * Return chair
+     * @param faculty - faculty
+     * @return - chair
+     */
     private static Chair getChair(Faculty faculty) {
         faculty.showChairs();
         return faculty.getChair(ConsoleRequest.getValidIndex(1, faculty.getNumberOfChairs(), "Введіть номер кафедри") - 1);
     }
 
+    /**
+     * Task 1
+     * Create / delete / edit faculty
+     */
     private static void workWithFaculty() {
         int choice = 0;
         while (choice != 5) {
