@@ -34,6 +34,10 @@ public class Faculty {
         return chairs.getChair(indexChair);
     }
 
+    public Chair[] getChairs() {
+        return chairs.getChairs();
+    }
+
     /**
      * Change faculty name
      *

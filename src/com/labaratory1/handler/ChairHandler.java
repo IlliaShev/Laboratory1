@@ -32,6 +32,10 @@ public class ChairHandler {
         return chairs[indexChair];
     }
 
+    public Chair[] getChairs() {
+        return chairs;
+    }
+
     public void showChairs() {
         for (int i = 0; i < currentChair; i++) {
             System.out.println((i + 1) + ". " + chairs[i]);

@@ -54,6 +54,10 @@ public class StudentHandler {
     }
 
 
+    public Student[] getStudents() {
+        return students;
+    }
+
     /**
      * Add student to the handler
      *

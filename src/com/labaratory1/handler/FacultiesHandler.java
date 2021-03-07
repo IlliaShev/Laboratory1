@@ -62,6 +62,11 @@ public class FacultiesHandler {
         return faculties[facultyIndex];
     }
 
+
+    public Faculty[] getFaculties() {
+        return faculties;
+    }
+
     /**
      * Add faculty to the handler
      *
