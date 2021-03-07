@@ -141,11 +141,21 @@ public class Chair {
     public void showStudents() {
         students.showStudents();
     }
+
     /**
      * Show lecture
      */
     public void showLectures() {
         lectures.showLecturers();
+    }
+
+
+    public Student[] getStudents() {
+        return students.getStudents();
+    }
+
+    public Lecturer[] getLecturers() {
+        return lectures.getLecturers();
     }
 
     /**

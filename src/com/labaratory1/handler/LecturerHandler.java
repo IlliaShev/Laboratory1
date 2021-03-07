@@ -54,6 +54,10 @@ public class LecturerHandler {
         return currentLecturer;
     }
 
+    public Lecturer[] getLecturers() {
+        return lecturers;
+    }
+
     /**
      * Print to the console all the lecturers that was added
      */

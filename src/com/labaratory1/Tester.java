@@ -2,12 +2,17 @@ package com.labaratory1;
 
 import com.labaratory1.abstractions.Chair;
 import com.labaratory1.abstractions.Faculty;
+import com.labaratory1.abstractions.Lecturer;
 import com.labaratory1.abstractions.Student;
+import com.labaratory1.comparators.LecturerNameComparator;
+import com.labaratory1.comparators.StudentCourseComparator;
 import com.labaratory1.comparators.StudentNameComparator;
 import com.labaratory1.handler.FacultiesHandler;
 import utils.ConsoleRequest;
 import utils.DataInput;
 import utils.Quicksort;
+
+import java.util.ArrayList;
 
 public class Tester {
     private static FacultiesHandler faculties = new FacultiesHandler();
@@ -37,6 +42,10 @@ public class Tester {
                 case 3 -> {
                     workWithChairSL();
                 }
+                case 5 -> task5();
+                case 6 -> task6();
+                case 7 -> task7();
+                case 8 -> task8();
                 case 9 -> getStudentsFromChairByCourse();
                 case 10 -> task10();
                 case 11 -> {
@@ -46,22 +55,104 @@ public class Tester {
         }
     }
 
-    private static void task10() {
-        Student[] students = getArrStudentsFromChairByCours();
-        students = (Student[]) Quicksort.quickSort(students, 0, students.length - 1, new StudentNameComparator());
-        for (Student student : students) {
-            System.out.println(student);
+    private static void task5() {
+        Faculty[] facults = faculties.getFaculties();
+        Student[] students = new Student[0];
+        for (Faculty faculty : facults) {
+            Chair[] chairs = faculty.getChairs();
+            for (Chair chair : chairs) {
+                Student[] buffStudents = new Student[students.length + chair.getStudents().length];
+                System.arraycopy(students, 0, buffStudents, 0, students.length);
+                System.arraycopy(chair.getStudents(), 0, buffStudents, students.length, chair.getStudents().length);
+            }
         }
+        students = (Student[]) Quicksort.quickSort(students, 0, students.length - 1, new StudentCourseComparator());
+        printArray(students);
+    }
+
+    private static void task6() {
+        Faculty faculty = getFaculty();
+        Chair[] chairs = faculty.getChairs();
+        Lecturer[] lecturers = new Lecturer[0];
+        Student[] students = new Student[0];
+        for (Chair chair : chairs) {
+            Lecturer[] buffLecturers = new Lecturer[lecturers.length + chair.getLecturers().length];
+            System.arraycopy(lecturers, 0, buffLecturers, 0, lecturers.length);
+            System.arraycopy(chair.getLecturers(), 0, buffLecturers, lecturers.length, chair.getLecturers().length);
+            Student[] buffStudents = new Student[students.length + chair.getStudents().length];
+            System.arraycopy(students, 0, buffStudents, 0, students.length);
+            System.arraycopy(chair.getStudents(), 0, buffStudents, students.length, chair.getStudents().length);
+        }
+        lecturers = (Lecturer[]) Quicksort.quickSort(lecturers, 0, lecturers.length - 1, new LecturerNameComparator());
+        students = (Student[]) Quicksort.quickSort(students, 0, students.length - 1, new StudentNameComparator());
+        int choice = 0;
+        while (choice != 3) {
+            System.out.println("1 - Вивести всіх студентів факультета впорядкованих за алфавітом");
+            System.out.println("2 - Вивести всіх викладачів факультета впорядкованих за алфавітом");
+            System.out.println("3 - Повернутися до меню");
+            choice = DataInput.getInt("Оберіть дію");
+            switch (choice) {
+                case 1 -> printArray(students);
+                case 2 -> printArray(lecturers);
+                case 3 -> {
+                }
+                default -> System.out.println("Неправильне введення даних");
+            }
+        }
+
+    }
+
+    private static void task7() {
+        Faculty faculty = getFaculty();
+        Chair chair = getChair(faculty);
+        Student[] students = (Student[]) Quicksort.quickSort(chair.getStudents(), 0, chair.getStudents().length - 1, new StudentCourseComparator());
+        printArray(students);
+    }
+
+    private static void task8() {
+        Faculty faculty = getFaculty();
+        Chair chair = getChair(faculty);
+        int choice = 0;
+        while (choice != 3) {
+            System.out.println("1 - Вивести студентів кафедри впорядкованих за алфавітом");
+            System.out.println("2 - Вивести лекторів кафедри впорядкованих за алфавітом");
+            System.out.println("3 - Повернутися до меню");
+            choice = DataInput.getInt("Оберіть дію");
+            switch (choice) {
+                case 1 -> {
+                    Student[] students = (Student[]) Quicksort.quickSort(chair.getStudents(), 0, chair.getStudents().length - 1, new StudentNameComparator());
+                    printArray(students);
+                }
+                case 2 -> {
+                    Lecturer[] lecturers = (Lecturer[]) Quicksort.quickSort(chair.getLecturers(), 0, chair.getLecturers().length - 1, new LecturerNameComparator());
+                    printArray(lecturers);
+                }
+                case 3 -> {
+                }
+                default -> System.out.println("Неправильне введення даних");
+            }
+        }
+    }
+
+    private static void task10() {
+        Student[] students = getArrStudentsFromChairByCourse();
+        students = (Student[]) Quicksort.quickSort(students, 0, students.length - 1, new StudentNameComparator());
+        printArray(students);
+    }
+
+    private static void printArray(Object[] objects) {
+        for (Object object : objects)
+            System.out.println(object);
     }
 
     private static void getStudentsFromChairByCourse() {
-        Student[] students = getArrStudentsFromChairByCours();
+        Student[] students = getArrStudentsFromChairByCourse();
         for (Student student : students) {
             System.out.println(student);
         }
     }
 
-    private static Student[] getArrStudentsFromChairByCours() {
+    private static Student[] getArrStudentsFromChairByCourse() {
         Faculty faculty = getFaculty();
         Chair chair = getChair(faculty);
         return chair.getStudentsByCourse(ConsoleRequest.getValidIndex(1, 6, "Введіть курс, студентів якого ви хочете побачити"));
