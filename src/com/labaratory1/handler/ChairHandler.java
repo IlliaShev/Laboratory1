@@ -90,8 +90,16 @@ public class ChairHandler {
             System.out.println("Досягнута максимальна кількість кафедр");
     }
 
+    public void addChair(Chair chair) {
+        if (currentChair < maximumSize)
+            chairs[currentChair++] = chair;
+        else
+            System.out.println("Досягнута максимальна кількість кафедр");
+    }
+
     /**
      * editChair
+     *
      * @param indexChair indexChair
      */
     public void editChair(int indexChair) {

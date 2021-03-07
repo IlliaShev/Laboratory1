@@ -23,11 +23,69 @@ public class Tester {
      */
     private static FacultiesHandler faculties = new FacultiesHandler();
 
+
+    private static void initialAdding() {
+        faculties.addFaculty(new Faculty("ФСНСТ"));
+        Faculty faculty = faculties.getFaculty(0);
+        Chair firstChair = new Chair("Кафедра психології", 100, 10);
+        Chair secondChair = new Chair("Кафедра соціології", 50, 8);
+        faculty.addChair(firstChair);
+        faculty.addChair(secondChair);
+
+        //students first chair first faculty
+        firstChair.addStudent(new Student("Шевчик", "ФСНСТПСИХ1", 1));
+        firstChair.addStudent(new Student("Мельник", "ФСНСТПСИХ2", 2));
+        firstChair.addStudent(new Student("Шевчук", "ФСНСТПСИХ4", 4));
+        firstChair.addStudent(new Student("Мороз", "ФСНСТПСИХ2", 2));
+        firstChair.addStudent(new Student("Ткачук", "ФСНСТПСИХ3", 3));
+        firstChair.addStudent(new Student("Бойко", "ФСНСТПСИХ2", 2));
+        firstChair.addStudent(new Student("Кравчук", "ФСНСТПСИХ1", 1));
+        firstChair.addStudent(new Student("Швець", "ФСНСТПСИХ6", 6));
+        firstChair.addStudent(new Student("Гаврилюк", "ФСНСТПСИХ2", 2));
+        firstChair.addStudent(new Student("Коломієць", "ФСНСТПСИХ3", 3));
+
+        //lecturers first chair first faculty
+        firstChair.addLecturer(new Lecturer("Попович", 45, 3));
+        firstChair.addLecturer(new Lecturer("Марчук", 52, 5));
+        firstChair.addLecturer(new Lecturer("Тищенко", 33, 2));
+        firstChair.addLecturer(new Lecturer("Вовк", 39, 1));
+        firstChair.addLecturer(new Lecturer("Білоус", 48, 3));
+        firstChair.addLecturer(new Lecturer("Шевченко", 61, 2));
+        firstChair.addLecturer(new Lecturer("Жорнік", 21, 1));
+        firstChair.addLecturer(new Lecturer("Нестеренко", 29, 2));
+        firstChair.addLecturer(new Lecturer("Макаренко", 36, 3));
+
+        //students second chair first faculty
+        secondChair.addStudent(new Student("Романюк", "ФСНСТСОЦ1", 1));
+        secondChair.addStudent(new Student("Мазур", "ФСНСТСОЦ1", 3));
+        secondChair.addStudent(new Student("Кушнір", "ФСНСТСОЦ1", 2));
+        secondChair.addStudent(new Student("Кірічок", "ФСНСТСОЦ1", 2));
+        secondChair.addStudent(new Student("Сидорчук", "ФСНСТСОЦ1", 4));
+        secondChair.addStudent(new Student("Павленко", "ФСНСТСОЦ1", 2));
+        secondChair.addStudent(new Student("Фольга", "ФСНСТСОЦ1", 3));
+        secondChair.addStudent(new Student("Савчук", "ФСНСТСОЦ1", 2));
+        secondChair.addStudent(new Student("Дядюк", "ФСНСТСОЦ1", 4));
+        secondChair.addStudent(new Student("Фомюк", "ФСНСТСОЦ1", 1));
+
+        //lecturers second chair first faculty
+        secondChair.addLecturer(new Lecturer("Бабенко", 45, 2));
+        secondChair.addLecturer(new Lecturer("Терещенко", 51, 1));
+        secondChair.addLecturer(new Lecturer("Жмаков", 25, 1));
+        secondChair.addLecturer(new Lecturer("Юрченко", 35, 2));
+        secondChair.addLecturer(new Lecturer("Городович", 46, 4));
+        secondChair.addLecturer(new Lecturer("Бабій", 48, 2));
+        secondChair.addLecturer(new Lecturer("Москаленко", 61, 2));
+        secondChair.addLecturer(new Lecturer("Молотобоєць", 44, 3));
+    }
+
+
     /**
      * Start program
+     *
      * @param args string
      */
     public static void main(String[] args) {
+        initialAdding();
         int choice = 0;
         while (choice != 11) {
             System.out.println("1 - Створити/видалити/редагувати факультет");

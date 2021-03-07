@@ -90,6 +90,10 @@ public class Faculty {
         chairs.addChair();
     }
 
+    public void addChair(Chair chair) {
+        chairs.addChair(chair);
+    }
+
     /**
      * Delete students
      */
