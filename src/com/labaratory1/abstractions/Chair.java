@@ -129,10 +129,6 @@ public class Chair {
         students.addStudent();
     }
 
-    public void addStudent(Student student) {
-        students.addStudent(student);
-    }
-
     /**
      * Edit students
      */
@@ -154,10 +150,6 @@ public class Chair {
      */
     public void addLecturer() {
         lectures.addLecturer();
-    }
-
-    public void addLecturer(Lecturer lecturer) {
-        lectures.addLecturer(lecturer);
     }
 
     /**
