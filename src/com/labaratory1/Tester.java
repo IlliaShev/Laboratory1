@@ -362,6 +362,10 @@ public class Tester {
      */
     private static void task6() {
         Faculty faculty = getFaculty();
+        if (faculty.getNumberOfChairs() == 0) {
+            System.out.println("Даний факультет не містить жодної кафедри");
+            return;
+        }
         Chair[] chairs = faculty.getChairs();
         Lecturer[] lecturers = new Lecturer[0];
         Student[] students = new Student[0];
@@ -402,6 +406,10 @@ public class Tester {
      */
     private static void task7() {
         Faculty faculty = getFaculty();
+        if (faculty.getNumberOfChairs() == 0) {
+            System.out.println("Даний факультет не містить жодної кафедри");
+            return;
+        }
         Chair chair = getChair(faculty);
         Student[] students = (Student[]) Quicksort.quickSort(chair.getStudents(), 0, chair.getStudents().length - 1, new StudentCourseComparator());
         printArray(students);
@@ -413,6 +421,10 @@ public class Tester {
      */
     private static void task8() {
         Faculty faculty = getFaculty();
+        if (faculty.getNumberOfChairs() == 0) {
+            System.out.println("Даний факультет не містить жодної кафедри");
+            return;
+        }
         Chair chair = getChair(faculty);
         int choice = 0;
         while (choice != 3) {
@@ -474,6 +486,10 @@ public class Tester {
      */
     private static Student[] getArrStudentsFromChairByCourse() {
         Faculty faculty = getFaculty();
+        if (faculty.getNumberOfChairs() == 0) {
+            System.out.println("Даний факультет не містить жодної кафедри");
+            return new Student[0];
+        }
         Chair chair = getChair(faculty);
         return chair.getStudentsByCourse(ConsoleRequest.getValidIndex(1, 6, "Введіть курс, студентів якого ви хочете побачити"));
     }
@@ -484,6 +500,10 @@ public class Tester {
      */
     private static void workWithChairSL() {
         Faculty faculty = getFaculty();
+        if (faculty.getNumberOfChairs() == 0) {
+            System.out.println("Даний факультет не містить жодної кафедри");
+            return;
+        }
         Chair chair = getChair(faculty);
         int choice = 0;
         while (choice != 3) {
